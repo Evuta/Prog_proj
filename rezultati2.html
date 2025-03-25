@@ -26,15 +26,15 @@
     <ul class="navbar-nav d-flex flex-row">
       {% for link in nav_links %}
         <li class="nav-item px-3">
-          <a class="nav-link text-white" href="{{ url_for('home') if link.name == 'Sākums' else url_for('rezultati1' if link.name == 'Rezultāti 1' else 'rezultati2') }}">{{ link.name }}</a>
+          <a href="{{ url_for(link.id) }}" style="color: white;">{{ link.name }}</a>
         </li>
       {% endfor %}
     </ul>
   </nav>
 
   <div class="text-center">
-    <h1>Rezultāti 2</h1>
-    <p>Sie ir rezultati 2</p>
+    <h2>Histogramma</h2>
+    <p>Papētot dziļāk dokumentālā žanra atbildes, mēs redzam, ka dokumentālās filmas visvairāk patīk cilvēkiem vecumā no 50 līdz 60 gadiem. Šokējoši.</p>
     <div class="text-center">
       <img src="{{ url_for('static', filename='hist.png') }}" alt="Histogramma" class="img-fluid">
     </div>
