@@ -24,21 +24,34 @@
     <ul class="navbar-nav d-flex flex-row">
       {% for link in nav_links %}
         <li class="nav-item px-3">
-          <a class="nav-link text-white" href="{{ url_for('home') if link.name == 'Sākums' else url_for('rezultati1' if link.name == 'Rezultāti 1' else 'rezultati2') }}">{{ link.name }}</a>
+          <a href="{{ url_for(link.id) }}" style="color: white;">{{ link.name }}</a>
         </li>
       {% endfor %}
     </ul>
   </nav>
 
   <div class="text-center">
-    <h1 class="mb-3">Aptauja par dažāda vecuma cilvēku mīļākajām filmām</h1>
+    <h2 class="mb-3">Dažāda vecuma cilvēku mīļākās filmas</h2>
   </div>
 
   <div class="section" id="about"> 
     <div class="container"> 
       <div class="h4 text-center title">Apraksts</div> 
-      <p>ahahahahahahahahhahah</p> 
+      <div class="text-center">
+      <p>Projektu veidoja Nīcas vidusskolas 11. klases skolēni - Līga Lapiņa, Henrijs Diķis, Tomass Toms Sprūds un Evita Cābele.
+        Veicām aptauju, kurā noskaidrojām cilvēku vecumu, mīļāko filmu žanru un iemeslu, kāpēc patīk žanrs.
+      </p> 
+      </div>
     </div> 
+  </div>
+
+
+  <div class="text-center">
+    <h4>Rezultāti</h4>
+    <p>Kopumā ieguvām 66 atbildes. Visvairāk atbildes, 35, bija no jauniešiem vecumā no 10 līdz 20 gadiem.</p>
+    <div class="text-center">
+      <img src="{{ url_for('static', filename='chart.png') }}" alt="Pie Chart" class="img-fluid">
+    </div>
   </div>
 
 </body>
