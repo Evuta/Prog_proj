@@ -18,7 +18,6 @@ class Autors(Model):
         database = db
 
 db.connect()
-db.drop_tables([Autors])
 db.create_tables([Autors], safe=True)
 
 if not Autors.select().exists():
